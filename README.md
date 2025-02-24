@@ -1,0 +1,2 @@
+# SZTU-Course-Selection-Helper
+ 
