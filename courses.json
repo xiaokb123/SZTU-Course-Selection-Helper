@@ -1,0 +1,56 @@
+[
+    {
+        "course_id": "IB00226",
+        "course_name": "高等数学A2",
+        "teacher": "李瑞",
+        "time": "周三",
+        "start_section": "1",
+        "end_section": "2",
+        "tab_type": "cross_major"
+    },
+    {
+        "course_id": "CP00008",
+        "course_name": "大学物理实验B2",
+        "teacher": "蒋长勇",
+        "time": "周四",
+        "start_section": "11",
+        "end_section": "14",
+        "tab_type": "cross_major"
+    },
+    {
+        "course_id": "CP00006",
+        "course_name": "大学物理B2",
+        "teacher": "吴海娜",
+        "time": "周三",
+        "start_section": "3",
+        "end_section": "5",
+        "tab_type": "cross_major"
+    },
+    {
+        "course_id": "SA00001",
+        "course_name": "大学生心理健康",
+        "teacher": "姚双雁",
+        "time": "周一",
+        "start_section": "13",
+        "end_section": "14",
+        "tab_type": "cross_major"
+    },
+    {
+        "course_id": "IB01029",
+        "course_name": "操作系统",
+        "teacher": "李金鑫",
+        "time": "周二",
+        "start_section": "1",
+        "end_section": "2",
+        "tab_type": "plan"
+    },
+    {
+        "course_id": "",
+        "course_name": "面向对象程序设计",
+        "teacher": "沈小乐",
+        "time": "周四",
+        "start_section": "6",
+        "end_section": "10",
+        "tab_type": "cross_grade"
+    }
+] 
