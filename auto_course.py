@@ -13,7 +13,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support.ui import WebDriverWait, Select
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException, NoSuchElementException, WebDriverException
 from webdriver_manager.chrome import ChromeDriverManager
@@ -110,6 +110,7 @@ class CourseSelector:
             options = Options()
             # 设置无界面模式
             options.add_argument("--headless=new")
+            #设置界面模式
             options.add_argument("--disable-blink-features=AutomationControlled")
             options.add_experimental_option("excludeSwitches", ["enable-automation"])
             options.add_experimental_option("useAutomationExtension", False)
@@ -435,27 +436,19 @@ class CourseSelector:
             
             # 选择开始节次
             start_select = self.wait_for_element(By.ID, "skjc")
-            start_select.click()
-            self.random_sleep(0.5, 1)
-            
-            start_option = self.wait_for_element(
-                By.XPATH, f"//select[@id='skjc']/option[@value='{start_section}']"
-            )
-            start_option.click()
+            Select(start_select).select_by_value(str(start_section))
             self.random_sleep(0.5, 1)
             
             # 选择结束节次
             end_select = self.wait_for_element(By.ID, "endJc")
-            end_select.click()
+            Select(end_select).select_by_value(str(end_section))
             self.random_sleep(0.5, 1)
-            
-            end_option = self.wait_for_element(
-                By.XPATH, f"//select[@id='endJc']/option[@value='{end_section}']"
-            )
-            end_option.click()
-            self.random_sleep(0.5, 1)
-            
-            # 5. 尝试多种方式定位查询按钮
+
+            # 5. 选择是否过滤已满课程
+            guolv = self.driver.find_element(By.XPATH, "//label[contains(span, '过滤已满课程')]")
+            guolv.click()
+
+            # 6. 尝试多种方式定位查询按钮
             search_button = None
             try_count = 0
             max_tries = 4
